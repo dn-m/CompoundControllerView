@@ -1,0 +1,10 @@
+framework module ArrayTools {
+  umbrella header "ArrayTools.h"
+
+  export *
+  module * { export * }
+}
+
+module ArrayTools.Swift {
+    header "ArrayTools-Swift.h"
+}

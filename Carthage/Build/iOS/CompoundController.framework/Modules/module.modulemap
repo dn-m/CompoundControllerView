@@ -1,0 +1,10 @@
+framework module CompoundController {
+  umbrella header "CompoundController.h"
+
+  export *
+  module * { export * }
+}
+
+module CompoundController.Swift {
+    header "CompoundController-Swift.h"
+}

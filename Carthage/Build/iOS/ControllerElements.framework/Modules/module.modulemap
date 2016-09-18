@@ -1,0 +1,10 @@
+framework module ControllerElements {
+  umbrella header "ControllerElements.h"
+
+  export *
+  module * { export * }
+}
+
+module ControllerElements.Swift {
+    header "ControllerElements-Swift.h"
+}
