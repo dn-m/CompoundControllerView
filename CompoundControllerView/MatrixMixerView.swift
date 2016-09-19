@@ -20,7 +20,6 @@ public class MatrixMixerView: CompoundControllerView {
     private let amountInputs: UInt
     private let amountOutputs: UInt
     
-    // store knobs in a Matrix model
     private var dials: Matrix<Dial>
     
     public init(frame: CGRect, amountInputs: UInt, amountOutputs: UInt) {
