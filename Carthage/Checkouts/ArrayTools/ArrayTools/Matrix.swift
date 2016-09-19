@@ -49,6 +49,14 @@ public struct Matrix<T: EmptyInitializable> {
     }
 }
 
+extension Matrix: Sequence {
+    
+    public func makeIterator() -> AnyIterator<T> {
+        var iterator = grid.makeIterator()
+        return AnyIterator { return iterator.next() }
+    }
+}
+
 /// - returns: `true` if all values of both matrices are equivalent. Otherwise, `false`.
 public func == <T: Equatable> (lhs: Matrix<T>, rhs: Matrix<T>) -> Bool {
     return lhs.grid == rhs.grid

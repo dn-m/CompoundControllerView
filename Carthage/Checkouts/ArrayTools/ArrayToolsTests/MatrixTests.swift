@@ -29,4 +29,9 @@ class MatrixTests: XCTestCase {
         matrix[1,2] = 1
         XCTAssertEqual(matrix[1,2], 1)
     }
+    
+    func testSequence() {
+        let matrix = Matrix<Int>(amountRows: 3, amountColumns: 3)
+        XCTAssertEqual(matrix.map { $0 }.count, 9)
+    }
 }

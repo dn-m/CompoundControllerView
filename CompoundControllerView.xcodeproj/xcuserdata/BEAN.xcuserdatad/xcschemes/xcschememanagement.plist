@@ -9,20 +9,34 @@
 			<key>isShown</key>
 			<true/>
 		</dict>
+		<key>CompoundControllerView.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
 		<key>CompoundControllerViewMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 		</dict>
+		<key>CompoundControllerViewMac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>CompoundControllerViewMacTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>CompoundControllerViewTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

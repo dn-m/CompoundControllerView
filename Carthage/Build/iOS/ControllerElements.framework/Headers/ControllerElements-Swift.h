@@ -130,11 +130,12 @@ SWIFT_CLASS("_TtC18ControllerElements4Dial")
 */
 - (void)createComponents;
 - (CGRect)makeFrame;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)rampTo:(float)value over:(double)duration;
 - (void)addOutlineCircle;
 - (void)addLine;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer SWIFT_UNAVAILABLE;
 @end
 
@@ -143,13 +144,13 @@ SWIFT_CLASS("_TtC18ControllerElements6Slider")
 @interface Slider : CALayer
 @property (nonatomic, copy) NSArray<CALayer *> * _Nonnull components;
 @property (nonatomic) float value;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)createComponents;
 - (void)addOutline;
 - (void)addIndicator;
 - (CGRect)makeFrame;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer SWIFT_UNAVAILABLE;
 @end
 

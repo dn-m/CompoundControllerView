@@ -28,6 +28,10 @@ public class Slider: CALayer, CompositeShapeType {
         }
     }
     
+    public required override init() {
+        super.init()
+    }
+    
     public init(frame: CGRect) {
         super.init()
         self.frame = frame
