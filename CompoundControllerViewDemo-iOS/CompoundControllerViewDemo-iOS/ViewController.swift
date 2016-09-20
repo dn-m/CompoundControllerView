@@ -14,16 +14,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let matrixMixerView = MatrixMixerView(
-            frame: CGRect(x: 100, y: 100, width: 400, height: 400),
-            amountInputs: 4,
-            amountOutputs: 4
-        )
+//        let matrixMixerView = MatrixMixerView(
+//            frame: CGRect(x: 100, y: 100, width: 400, height: 400),
+//            amountInputs: 4,
+//            amountOutputs: 4
+//        )
+//        
+//        view.layer.addSublayer(matrixMixerView)
+//        matrixMixerView[1,1].ramp(to: 0.75, over: 20)
+//        matrixMixerView[0,2].ramp(to: 0.33, over: 30)
+//        matrixMixerView[2,0].ramp(to: 0.25, over: 12)
         
-        view.layer.addSublayer(matrixMixerView)
-        matrixMixerView[1,1].ramp(to: 1.0, over: 20)
-        matrixMixerView[0,2].ramp(to: 1.0, over: 30)
-        matrixMixerView[2,0].ramp(to: 1.0, over: 12)
+        let eqView = GraphicEqualizerView(
+            frame: CGRect(x: 100, y: 100, width: 400, height: 200),
+            amountBands: 10
+        )
+        view.layer.addSublayer(eqView)
     }
 
     override func didReceiveMemoryWarning() {

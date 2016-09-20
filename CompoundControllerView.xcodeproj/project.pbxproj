@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078185A01D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */; };
+		078185A11D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */; };
 		0787A0E71D8F1C4600AB9396 /* CompoundControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787A0E61D8F1C4600AB9396 /* CompoundControllerView.swift */; };
 		0787A0E81D8F1C4600AB9396 /* CompoundControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787A0E61D8F1C4600AB9396 /* CompoundControllerView.swift */; };
 		0787A0EA1D8F1DF300AB9396 /* MatrixMixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787A0E91D8F1DF300AB9396 /* MatrixMixerView.swift */; };
@@ -74,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicEqualizerView.swift; path = CompoundControllerView/GraphicEqualizerView.swift; sourceTree = "<group>"; };
 		0787A0E61D8F1C4600AB9396 /* CompoundControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundControllerView.swift; path = CompoundControllerView/CompoundControllerView.swift; sourceTree = "<group>"; };
 		0787A0E91D8F1DF300AB9396 /* MatrixMixerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixMixerView.swift; path = CompoundControllerView/MatrixMixerView.swift; sourceTree = "<group>"; };
 		2876A879476288F9D9247B6D /* CompoundController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CompoundController.framework; path = Carthage/Build/Mac/CompoundController.framework; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 				4D6D47A06645950438222D12 /* Supporting Files */,
 				0787A0E61D8F1C4600AB9396 /* CompoundControllerView.swift */,
 				0787A0E91D8F1DF300AB9396 /* MatrixMixerView.swift */,
+				0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */,
 			);
 			name = CompoundControllerView;
 			sourceTree = "<group>";
@@ -419,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078185A01D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */,
 				0787A0E71D8F1C4600AB9396 /* CompoundControllerView.swift in Sources */,
 				0787A0EA1D8F1DF300AB9396 /* MatrixMixerView.swift in Sources */,
 			);
@@ -435,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078185A11D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */,
 				0787A0E81D8F1C4600AB9396 /* CompoundControllerView.swift in Sources */,
 				0787A0EB1D8F1DF300AB9396 /* MatrixMixerView.swift in Sources */,
 			);
