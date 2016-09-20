@@ -25,11 +25,13 @@ class ViewController: UIViewController {
 //        matrixMixerView[0,2].ramp(to: 0.33, over: 30)
 //        matrixMixerView[2,0].ramp(to: 0.25, over: 12)
         
-        let eqView = GraphicEqualizerView(
+        let eq = GraphicEqualizerView(
             frame: CGRect(x: 100, y: 100, width: 400, height: 200),
             amountBands: 10
         )
-        view.layer.addSublayer(eqView)
+        view.layer.addSublayer(eq)
+        
+        eq[2].ramp(to: 0.5, over: 20)
     }
 
     override func didReceiveMemoryWarning() {

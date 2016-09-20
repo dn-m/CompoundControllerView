@@ -28,6 +28,8 @@ public class GraphicEqualizerView: CompoundControllerView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // TODO: subscript (frequency: Frequency) -> Slider?
+    
     public subscript (slider: UInt) -> Slider {
         
         get {

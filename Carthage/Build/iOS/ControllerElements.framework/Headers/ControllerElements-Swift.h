@@ -133,10 +133,14 @@ SWIFT_CLASS("_TtC18ControllerElements4Dial")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)rampTo:(float)value over:(double)duration;
 - (void)addOutlineCircle;
 - (void)addLine;
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer SWIFT_UNAVAILABLE;
+@end
+
+
+@interface Dial (SWIFT_EXTENSION(ControllerElements))
+- (void)rampTo:(float)value over:(double)duration;
 @end
 
 
@@ -152,6 +156,11 @@ SWIFT_CLASS("_TtC18ControllerElements6Slider")
 - (void)addIndicator;
 - (CGRect)makeFrame;
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer SWIFT_UNAVAILABLE;
+@end
+
+
+@interface Slider (SWIFT_EXTENSION(ControllerElements))
+- (void)rampTo:(float)value over:(double)duration;
 @end
 
 #pragma clang diagnostic pop
