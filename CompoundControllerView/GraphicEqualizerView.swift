@@ -13,7 +13,6 @@ import ControllerElements
 
 public class GraphicEqualizerView: CompoundControllerView {
     
-    // necessary?
     private let amountBands: UInt
     
     private var sliders: [Slider] = []
@@ -27,8 +26,6 @@ public class GraphicEqualizerView: CompoundControllerView {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // TODO: subscript (frequency: Frequency) -> Slider?
     
     public subscript (slider: UInt) -> Slider {
         
@@ -55,6 +52,6 @@ public class GraphicEqualizerView: CompoundControllerView {
     }
     
     private func layoutSliders() {
-        
+        // TODO
     }
 }
