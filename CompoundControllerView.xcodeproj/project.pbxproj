@@ -493,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bean.CompoundControllerView;
 				PRODUCT_NAME = CompoundControllerView;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -539,6 +540,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bean.CompoundControllerView;
 				PRODUCT_NAME = CompoundControllerView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -622,6 +624,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bean.CompoundControllerView;
 				PRODUCT_NAME = CompoundControllerView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -712,6 +715,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bean.CompoundControllerView;
 				PRODUCT_NAME = CompoundControllerView;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
