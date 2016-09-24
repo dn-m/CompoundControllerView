@@ -28,7 +28,6 @@ public class MatrixMixerView: CompoundControllerView {
         self.dials = Matrix<Dial>(amountRows: amountOutputs, amountColumns: amountInputs)
         super.init(frame: frame)
         createDials()
-        layoutDials()
         borderWidth = 1
         borderColor = Color(gray: 0, alpha: 1).cgColor
     }
@@ -48,7 +47,6 @@ public class MatrixMixerView: CompoundControllerView {
         }
     }
     
-    // TODO
     private func createDials() {
         let width = frame.width / CGFloat(amountOutputs)
         let height = frame.height / CGFloat(amountInputs)
@@ -64,9 +62,5 @@ public class MatrixMixerView: CompoundControllerView {
                 addSublayer(dial)
             }
         }
-    }
-    
-    private func layoutDials() {
-        
     }
 }
