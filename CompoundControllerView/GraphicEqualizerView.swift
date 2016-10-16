@@ -52,8 +52,23 @@ public class GraphicEqualizerView: CompoundControllerView {
     }
     
     private func createSliders() {
-        let width = frame.width / CGFloat(bands.count)
+        let paddingProportion: CGFloat = 0.5
+        let width = frame.width / (CGFloat(bands.count) + (CGFloat(bands.count - 1) * paddingProportion))
         
+        var accumLeft: CGFloat = 0
+        for label in bands {
+            let origin = CGPoint(x: accumLeft, y: 0)
+            let size = CGSize(width: width, height: frame.height)
+            let slider = Slider(frame: CGRect(origin: origin, size: size), label: label)
+            
+            sliders.append(slider)
+            addSublayer(slider)
+            
+            accumLeft += width
+            accumLeft += paddingProportion * width
+        }
+        
+        /*
         self.sliders = bands.enumerated().map { i, label in
             let left = frame.width * (CGFloat(i) / CGFloat(bands.count))
             let origin = CGPoint(x: left, y: 0)
@@ -62,6 +77,7 @@ public class GraphicEqualizerView: CompoundControllerView {
             addSublayer(slider)
             return slider
         }
+        */
     }
     
     private func layoutSliders() {
