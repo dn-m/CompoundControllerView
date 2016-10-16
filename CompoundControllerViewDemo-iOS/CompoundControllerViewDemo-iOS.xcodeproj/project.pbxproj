@@ -262,7 +262,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "CompoundControllerViewDemo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.CompoundControllerViewDemo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,7 +277,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "CompoundControllerViewDemo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.CompoundControllerViewDemo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +306,7 @@
 				0787A1091D8F1F7900AB9396 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

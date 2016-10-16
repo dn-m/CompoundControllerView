@@ -8,6 +8,8 @@
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>ControllerElements</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.bean.ControllerElements</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -27,16 +29,16 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>8S201h</string>
+	<string>8A218a</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>16A286a</string>
+	<string>16A300</string>
 	<key>DTSDKName</key>
 	<string>macosx10.12</string>
 	<key>DTXcode</key>
 	<string>0800</string>
 	<key>DTXcodeBuild</key>
-	<string>8S201h</string>
+	<string>8A218a</string>
 </dict>
 </plist>

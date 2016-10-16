@@ -8,17 +8,30 @@
 
 import QuartzCore
 import Color
-import CompoundController
 import ControllerElements
 
+// TODO: Add lines at -12, -6, 0, 6, 12
 public class GraphicEqualizerView: CompoundControllerView {
-    
-    private let amountBands: UInt
     
     private var sliders: [Slider] = []
     
-    public init(frame: CGRect, amountBands: UInt) {
-        self.amountBands = amountBands
+    // TODO: Create dictionary of [label: slider]
+    
+    private let bands = [
+        "GAIN",
+        "31.25",
+        "62.5",
+        "125",
+        "250",
+        "500",
+        "1K",
+        "2K",
+        "4K",
+        "8K",
+        "16K"
+    ]
+    
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         createSliders()
     }
@@ -39,13 +52,13 @@ public class GraphicEqualizerView: CompoundControllerView {
     }
     
     private func createSliders() {
-        let width = frame.width / CGFloat(amountBands)
+        let width = frame.width / CGFloat(bands.count)
         
-        self.sliders = (0 ..< amountBands).map { i in
-            let left = frame.width * (CGFloat(i) / CGFloat(amountBands))
+        self.sliders = bands.enumerated().map { i, label in
+            let left = frame.width * (CGFloat(i) / CGFloat(bands.count))
             let origin = CGPoint(x: left, y: 0)
             let size = CGSize(width: width, height: frame.height)
-            let slider = Slider(frame: CGRect(origin: origin, size: size))
+            let slider = Slider(frame: CGRect(origin: origin, size: size), label: label)
             addSublayer(slider)
             return slider
         }
