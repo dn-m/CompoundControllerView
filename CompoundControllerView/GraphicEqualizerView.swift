@@ -93,7 +93,7 @@ public class GraphicEqualizerView: CompoundControllerView {
             let lineLayer = CAShapeLayer()
             lineLayer.path = linePath.cgPath
             lineLayer.lineWidth = 1
-            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
+            lineLayer.strokeColor = Color(gray: 0.1, alpha: 1).cgColor
             addSublayer(lineLayer)
         }
     }
@@ -108,8 +108,8 @@ public class GraphicEqualizerView: CompoundControllerView {
             
             let lineLayer = CAShapeLayer()
             lineLayer.path = linePath.cgPath
-            lineLayer.lineWidth = 1
-            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
+            lineLayer.lineWidth = 2
+            lineLayer.strokeColor = Color(gray: 0.1, alpha: 1).cgColor
             addSublayer(lineLayer)
         }
     }

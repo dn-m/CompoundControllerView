@@ -131,7 +131,6 @@ SWIFT_CLASS("_TtC18ControllerElements4Dial")
 - (void)createComponents;
 - (CGRect)makeFrame;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)addOutlineCircle;
 - (void)addLine;
