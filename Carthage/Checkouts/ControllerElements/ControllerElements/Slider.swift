@@ -6,6 +6,12 @@
 //
 //
 
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+#endif
+
 import QuartzCore
 import Color
 import PathTools
@@ -21,7 +27,9 @@ public class Slider: CALayer, CompositeShapeType {
     
     public var label: String = ""
     
-    private var slotHeight: CGFloat { return frame.height - 20 }
+    public var slotHeight: CGFloat { return frame.height - labelHeight }
+    private var labelHeight: CGFloat { return 0.1 * frame.height }
+    
     
     public var value: Float = 0.0 {
         
@@ -54,7 +62,7 @@ public class Slider: CALayer, CompositeShapeType {
         addSublayer(layer)
     }
     
-    public func createSlot() {
+    private func createSlot() {
         let slotWidth = 0.382 * frame.width
         let left = 0.5 * (frame.width - slotWidth)
         let rect = Path.rectangle(rectangle: CGRect(x: left, y: 0, width: slotWidth, height: slotHeight))
@@ -66,8 +74,16 @@ public class Slider: CALayer, CompositeShapeType {
         layer.addSublayer(rectLayer)
     }
     
-    public func createIndicator() {
-        let path = Path.rectangle(rectangle: CGRect(x: 0, y: 0, width: frame.width, height: 2))
+    private func createIndicator() {
+        let width = 0.75 * frame.width
+        let path = Path.rectangle(
+            rectangle: CGRect(
+                x: 0.5 * (frame.width - width),
+                y: 0,
+                width: width,
+                height: 0.0382 * slotHeight
+            )
+        )
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         shape.fillColor = Color.red.cgColor
@@ -76,16 +92,23 @@ public class Slider: CALayer, CompositeShapeType {
     }
     
     private func createLabel() {
+        
+        // TODO: Inject dn-m/TextLayer when it is reimplemented
         let labelLayer = CATextLayer()
         labelLayer.string = label
-        labelLayer.fontSize = 10
+        
+        // FIXME: Set as function of frame.height
+        labelLayer.fontSize = 15
         labelLayer.foregroundColor = Color(gray: 0.5, alpha: 1).cgColor
         labelLayer.font = CGFont("Helvetica" as CFString)
-        labelLayer.frame = CGRect(x: 0, y: slotHeight, width: frame.width, height: 20)
+        labelLayer.frame = CGRect(x: 0, y: slotHeight, width: frame.width, height: labelHeight)
+        labelLayer.alignmentMode = kCAAlignmentCenter
         
-        // FIXME: Create platform agnostic solution to pixelation of Text
-        //labelLayer.contentsScale = UIScreen.main.scale
-        //labelLayer.contentsScale = NSScreen.main.scale
+        #if os(iOS)
+            labelLayer.contentsScale = UIScreen.main.scale
+        #elseif os(OSX)
+            labelLayer.contentsScale = NSScreen.main.scale
+        #endif
         
         addSublayer(labelLayer)
     }

@@ -148,13 +148,12 @@ SWIFT_CLASS("_TtC18ControllerElements6Slider")
 @interface Slider : CALayer
 @property (nonatomic, copy) NSArray<CALayer *> * _Nonnull components;
 @property (nonatomic, copy) NSString * _Nonnull label;
+@property (nonatomic, readonly) CGFloat slotHeight;
 @property (nonatomic) float value;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame label:(NSString * _Nonnull)label OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)createComponents;
-- (void)createSlot;
-- (void)createIndicator;
 - (CGRect)makeFrame;
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer SWIFT_UNAVAILABLE;
 @end

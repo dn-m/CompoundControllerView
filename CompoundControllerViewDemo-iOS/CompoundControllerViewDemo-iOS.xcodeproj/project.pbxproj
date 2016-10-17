@@ -74,9 +74,9 @@
 				07B2F4931DB4505F00187944 /* PathTools.framework in Frameworks */,
 				07B2F48F1DB4505F00187944 /* ControllerElements.framework in Frameworks */,
 				07B2F4891DB4505F00187944 /* ArrayTools.framework in Frameworks */,
-				07B2F4971DB4507A00187944 /* CompoundControllerView.framework in Frameworks */,
 				07B2F4911DB4505F00187944 /* GraphicsTools.framework in Frameworks */,
 				07B2F48D1DB4505F00187944 /* CompoundController.framework in Frameworks */,
+				07B2F4971DB4507A00187944 /* CompoundControllerView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
