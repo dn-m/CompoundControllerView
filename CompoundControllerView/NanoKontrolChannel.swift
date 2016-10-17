@@ -14,8 +14,7 @@ public class NanoKontrolChannel: CompoundControllerView {
     public var slider: Slider!
     public var dial: Dial!
     
-    public override init(frame: CGRect) {
-        
+    public init(frame: CGRect, label: String = "") {
         super.init(frame: frame)
         
         let dialHeight = 0.1 * frame.height
@@ -39,7 +38,8 @@ public class NanoKontrolChannel: CompoundControllerView {
                 y: dialHeight + padding,
                 width: sliderWidth,
                 height: sliderHeight
-            )
+            ),
+            label: label
         )
         
         addSublayer(slider)
