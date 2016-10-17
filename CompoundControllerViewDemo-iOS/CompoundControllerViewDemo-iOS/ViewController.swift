@@ -19,18 +19,10 @@ class ViewController: UIViewController {
         view.layer.addSublayer(eq)
         
         eq[2].ramp(to: 0.5, over: 20)
+
         
-        
-        // Test NanoKontrol Channel
-        let channel = NanoKontrolChannel(frame: CGRect(x: 400, y: 400, width: 100, height: 600))
-        
-        channel.slider.ramp(to: 1, over: 10)
-        channel.dial.ramp(to: 0.2, over: 12)
-        
-        view.layer.addSublayer(channel)
-        
-        // Text NanoKontrol
-        let nanoKontrol = NanoKontrolView(frame: CGRect(x: 100, y: 200, width: 400, height: 200))
+        // Test NanoKontrol
+        let nanoKontrol = NanoKontrolView(frame: CGRect(x: 100, y: 400, width: 400, height: 200))
         
         nanoKontrol.channels[6].slider.ramp(to: 1, over: 20)
         
