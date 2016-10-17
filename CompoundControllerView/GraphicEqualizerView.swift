@@ -61,6 +61,12 @@ public class GraphicEqualizerView: CompoundControllerView {
         }
     }
     
+    // FIXME: Use dictionary to store this data.
+    public subscript (label: String) -> Slider {
+        guard let index = bands.index(of: label) else { fatalError("Invalid band") }
+        return self[UInt(index)]
+    }
+    
     // TODO: add labels for -12, -6, 0, 6, 12
     private func configureBackground() {
         createReferenceLines()
