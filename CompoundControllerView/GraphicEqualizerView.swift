@@ -11,7 +11,6 @@ import Color
 import PathTools
 import ControllerElements
 
-// TODO: Add lines at -12, -6, 0, 6, 12
 public class GraphicEqualizerView: CompoundControllerView {
     
     private var sliders: [Slider] = []
@@ -56,9 +55,7 @@ public class GraphicEqualizerView: CompoundControllerView {
     
     // TODO: add labels for -12, -6, 0, 6, 12
     private func configureBackground() {
-        createBlackBars()
         createReferenceLines()
-        
         backgroundColor = Color(gray: 0, alpha: 1).cgColor
     }
     
@@ -69,30 +66,6 @@ public class GraphicEqualizerView: CompoundControllerView {
         yellowRectShape.path = yellowRectPath.cgPath
         yellowRectShape.fillColor = Color(255, 204, 0, 1).cgColor
         addSublayer(yellowRectShape)
-    }
-    
-    private func createBlackBars() {
-
-        for position: CGFloat in [0.25, 0.75] {
-            let altitude = position * sliders.first!.slotHeight
-            let height = 0.15 * sliders.first!.slotHeight
-            let top = altitude - 0.5 * height
-            let path = Path.rectangle(rectangle: CGRect(x: 0, y: top, width: frame.width, height: height))
-            let layer = CAShapeLayer()
-            layer.path = path.cgPath
-            layer.fillColor = Color(gray: 0, alpha: 1).cgColor
-            addSublayer(layer)
-            
-            let linePath = Path()
-                .move(to: CGPoint(x: 0, y: altitude))
-                .addLine(to: CGPoint(x: frame.width, y: altitude))
-            
-            let lineLayer = CAShapeLayer()
-            lineLayer.path = linePath.cgPath
-            lineLayer.lineWidth = 1
-            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
-            addSublayer(lineLayer)
-        }
     }
     
     private func createReferenceLines() {
@@ -117,8 +90,8 @@ public class GraphicEqualizerView: CompoundControllerView {
     }
     
     private func createThickReferenceLines() {
+        
         for position: CGFloat in [0.25, 0.75] {
-            
             let altitude = position * sliders.first!.slotHeight
             let linePath = Path()
                 .move(to: CGPoint(x: 0, y: altitude))
@@ -130,41 +103,6 @@ public class GraphicEqualizerView: CompoundControllerView {
             lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
             addSublayer(lineLayer)
         }
-
-    }
-
-    private func createCenterReferenceLine() {
-        
-        let altitude = 0.5 * sliders.first!.slotHeight
-        
-        let linePath = Path()
-            .move(to: CGPoint(x: 0, y: altitude))
-            .addLine(to: CGPoint(x: frame.width, y: altitude))
-        
-        let lineLayer = CAShapeLayer()
-        lineLayer.path = linePath.cgPath
-        lineLayer.lineWidth = 1
-        lineLayer.strokeColor = Color(gray: 0, alpha: 0.5).cgColor
-        addSublayer(lineLayer)
-        
-        /*
-        for position: CGFloat in [0.0, 0.25, 0.5, 0.75, 1.0] {
-            
-            // assumes Slider starts at top of EQ. This is temporary
-            let altitude = position * sliders.first!.slotHeight
-            
-            let path = Path()
-                .move(to: CGPoint(x: 0, y: altitude))
-                .addLine(to: CGPoint(x: frame.width, y: altitude))
-            
-            let shape = CAShapeLayer()
-            shape.path = path.cgPath
-            shape.lineWidth = 1
-            shape.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
-            addSublayer(shape)
-            
-        }
-         */
     }
     
     private func createSliders() {
