@@ -125,8 +125,4 @@ public class GraphicEqualizerView: CompoundControllerView {
     private func commitSliders() {
         sliders.forEach { addSublayer($0) }
     }
-    
-    private func layoutSliders() {
-        // TODO
-    }
 }
