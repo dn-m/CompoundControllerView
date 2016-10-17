@@ -14,10 +14,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Test EQ
         let eq = GraphicEqualizerView(frame: CGRect(x: 100, y: 100, width: 600, height: 200))
         view.layer.addSublayer(eq)
         
         eq[2].ramp(to: 0.5, over: 20)
+        
+        
+        // Test NanoKontrol Channel
+        let channel = NanoKontrolChannel(frame: CGRect(x: 400, y: 400, width: 100, height: 600))
+        
+        channel.slider.ramp(to: 1, over: 10)
+        channel.dial.ramp(to: 0.2, over: 12)
+        
+        view.layer.addSublayer(channel)
     }
 
     override func didReceiveMemoryWarning() {
