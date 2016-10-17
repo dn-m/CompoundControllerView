@@ -6,6 +6,14 @@
 //
 //
 
+// Temporary hack for lack of cross-platform TextLayer. Remove once dn-m/TextLayer is injected.
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+#endif
+
+
 import QuartzCore
 import Color
 import PathTools
@@ -71,6 +79,7 @@ public class GraphicEqualizerView: CompoundControllerView {
     private func createReferenceLines() {
         createThinReferenceLines()
         createThickReferenceLines()
+        createReferenceLabels()
     }
     
     private func createThinReferenceLines() {
@@ -102,6 +111,35 @@ public class GraphicEqualizerView: CompoundControllerView {
             lineLayer.lineWidth = 1
             lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
             addSublayer(lineLayer)
+        }
+    }
+    
+    
+    private func createReferenceLabels() {
+        let texts = ["12","6","0","-6","-12"]
+        let positions: [CGFloat] = [0.0, 0.25, 0.5, 0.75, 1.0]
+        for (label, position) in zip(texts, positions) {
+            
+            let altitude = sliders.first!.slotHeight * position
+            
+            // TODO: Inject dn-m/TextLayer when it is reimplemented
+            let labelLayer = CATextLayer()
+            labelLayer.string = label
+            
+            // FIXME: Set as function of frame.height
+            labelLayer.fontSize = 12
+            labelLayer.foregroundColor = Color(gray: 0.5, alpha: 1).cgColor
+            labelLayer.font = CGFont("AvenirNext-Bold" as CFString)
+            labelLayer.frame = CGRect(x: frame.width + 2, y: altitude - 9, width: 40, height: 40)
+            labelLayer.alignmentMode = kCAAlignmentLeft
+            
+            #if os(iOS)
+                labelLayer.contentsScale = UIScreen.main.scale
+            #elseif os(OSX)
+                labelLayer.contentsScale = NSScreen.main.scale
+            #endif
+            
+            addSublayer(labelLayer)
         }
     }
     
