@@ -54,10 +54,10 @@ public class GraphicEqualizerView: CompoundControllerView {
         }
     }
     
+    // TODO: add labels for -12, -6, 0, 6, 12
     private func configureBackground() {
-        createYellowBackground()
         createBlackBars()
-        createCenterReferenceLine()
+        createReferenceLines()
         
         backgroundColor = Color(gray: 0, alpha: 1).cgColor
     }
@@ -93,6 +93,44 @@ public class GraphicEqualizerView: CompoundControllerView {
             lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
             addSublayer(lineLayer)
         }
+    }
+    
+    private func createReferenceLines() {
+        createThinReferenceLines()
+        createThickReferenceLines()
+    }
+    
+    private func createThinReferenceLines() {
+        for position: CGFloat in [0,0.5,1.0] {
+            
+            let altitude = position * sliders.first!.slotHeight
+            let linePath = Path()
+                .move(to: CGPoint(x: 0, y: altitude))
+                .addLine(to: CGPoint(x: frame.width, y: altitude))
+            
+            let lineLayer = CAShapeLayer()
+            lineLayer.path = linePath.cgPath
+            lineLayer.lineWidth = 1
+            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
+            addSublayer(lineLayer)
+        }
+    }
+    
+    private func createThickReferenceLines() {
+        for position: CGFloat in [0.25, 0.75] {
+            
+            let altitude = position * sliders.first!.slotHeight
+            let linePath = Path()
+                .move(to: CGPoint(x: 0, y: altitude))
+                .addLine(to: CGPoint(x: frame.width, y: altitude))
+            
+            let lineLayer = CAShapeLayer()
+            lineLayer.path = linePath.cgPath
+            lineLayer.lineWidth = 1
+            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
+            addSublayer(lineLayer)
+        }
+
     }
 
     private func createCenterReferenceLine() {
